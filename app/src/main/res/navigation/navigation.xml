@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/mapsMainFragment">
+
+    <fragment
+        android:id="@+id/mapsMainFragment"
+        android:name="com.basebox.locationmap.MapsMainFragment"
+        android:label="fragment_maps_main"
+        tools:layout="@layout/fragment_maps_main" >
+        <action
+            android:id="@+id/action_mapsMainFragment_to_mapsSecondFragment"
+            app:destination="@id/mapsSecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsSecondFragment"
+        android:name="com.basebox.locationmap.MapsSecondFragment"
+        android:label="fragment_maps_second"
+        tools:layout="@layout/fragment_maps_second" >
+        <action
+            android:id="@+id/action_mapsSecondFragment_to_satelliteFragment"
+            app:destination="@id/satelliteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/satelliteFragment"
+        android:name="com.basebox.locationmap.SatelliteFragment"
+        android:label="fragment_satellite"
+        tools:layout="@layout/fragment_satellite" >
+        <action
+            android:id="@+id/action_satelliteFragment_to_terrainFragment"
+            app:destination="@id/terrainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/terrainFragment"
+        android:name="com.basebox.locationmap.TerrainFragment"
+        android:label="fragment_terrain"
+        tools:layout="@layout/fragment_terrain" >
+        <action
+            android:id="@+id/action_terrainFragment_to_mapsMainFragment"
+            app:destination="@id/mapsMainFragment" />
+    </fragment>
+</navigation>
